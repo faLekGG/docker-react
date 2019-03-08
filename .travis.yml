@@ -1,14 +1,7 @@
-#Said travis that we need super user permissions in order to execute this build
 sudo: required 
-#Says we needa copy of a docker is ready to go
 services: 
     - docker
-
-#Series of steps that have to occur before we start either to test or deploy our app
 before-install:
     - docker build -t falekgg/docker-react -f Dockerfile.dev .
-   
-#Script section supposed to contain all the different that 
-#need to be executed to actually run our test suits
 script:
     - docker run falekgg/docker-react npm run test -- --coverage
