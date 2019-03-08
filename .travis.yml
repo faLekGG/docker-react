@@ -1,11 +1,11 @@
-sudo: required 
-services: 
-    - docker
-    
-before-install:
-    - docker build -t falekgg/docker-react -f Dockerfile.dev .
-    
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t falekgg/docker-react -f Dockerfile.dev .
+
 script:
-    - docker run falekgg/docker-react npm run test -- --coverage
+  - docker run falekgg/docker-react npm run test -- --coverage
     
     
